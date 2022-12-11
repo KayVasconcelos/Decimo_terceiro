@@ -40,3 +40,38 @@ void decimo(funcionario *f, int n){
   printf("\nNome: %s\nCargo: %s\n13°: %.2f\n", f[i].nome, f[i].cargo, dt); 
   }
 }
+
+int main(){
+
+    printf("\nDigíte a quantidade de funcionários: ");
+    scanf("%d", &n);
+
+    funcionario *f;
+    f = malloc (n*sizeof(funcionario));
+
+    //verofocação de memória suficiente disponível
+    if(f==NULL){
+        printf("\nERRRO NA ALOCAÇÃO DE MEMÓRIA");
+        exit(1);
+    }
+
+    //preenchimento das estruturas
+    for(int i=0; i<n; i++){
+        printf("\nNome: ");
+        scanf("%s", f[i].nome);
+        printf("\nCargo: ");
+        scanf("%s", f[i].cargo);
+        for(int j=0; j<12; j++){
+            printf("\nSalário do %d° mês: ", j+1);
+            scanf("%f", &f[i].pagamentos[j].salario);
+            printf("\nComissão do %d mês: ", j+1);
+            scanf("%f", &f[i].pagamentos[j].comissao);
+        }
+    }
+
+    decimo(f, n); //chamada da função
+
+    free(f); //liberando o espaço da alocação de memória
+
+   return 0; 
+}
