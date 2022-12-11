@@ -15,7 +15,6 @@ typedef struct{
     mespg pagamentos[12]; //vetor com 12 posições (12 meses) de pagamentos
 } funcionario;
 
-int tam, comp = 0;
 int n, comp = 0;
 float mes, dt, soma = 0; //dt = decimo  terceiro
 
