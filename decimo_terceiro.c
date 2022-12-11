@@ -16,5 +16,6 @@ typedef struct{
 } funcionario;
 
 int tam, comp = 0;
+int n, comp = 0;
 float mes, dt, soma = 0; //dt = decimo  terceiro
 
